@@ -4,10 +4,10 @@ namespace BattleOfCards
 {
     public class Card
     {
-        int Rank;
-        string Name;
-        string Type;
-        int State;
+        private int Rank;
+        private string Name;
+        private string Type;
+        private int State;
 
         public Card(int rank, string name, string type, int state)
         {
