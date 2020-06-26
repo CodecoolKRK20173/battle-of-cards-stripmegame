@@ -1,6 +1,6 @@
 using System;
 
-namespace BattleOfCards
+namespace SuperheroClash
 {
     public class Card
     {
