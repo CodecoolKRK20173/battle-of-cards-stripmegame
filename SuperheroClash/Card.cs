@@ -6,16 +6,16 @@ namespace SuperheroClash
     {
         private int Rank;
         private string Name;
-        private string Type;
+        private string Team;
         private int State;
 
-        public Card(int rank, string name, string type, int state)
+        public Card(int rank, string name, string team)
         {
             this.Rank = rank;
             this.Name = name;
-            this.Type = type;
-            this.State = state;
+            this.Team = team;
         }
 
     }
+}
 

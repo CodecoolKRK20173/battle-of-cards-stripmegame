@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 
 namespace SuperheroClash
 {
@@ -6,7 +7,9 @@ namespace SuperheroClash
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var CardsOperation = new CardsDAO(@"D:\VisualStudio\CodeCool\SuperheroClash\SuperheroClash\Cards.csv");
+            var HeroArray = CardsOperation.SplittingFile();
+            var NewCards = CardsOperation.CreatingNewCards(HeroArray);
         }
     }
 }
