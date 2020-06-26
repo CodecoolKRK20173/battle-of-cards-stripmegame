@@ -1,0 +1,13 @@
+D:\VisualStudio\CodeCool\SuperheroClash\bin\Debug\netcoreapp3.1\SuperheroClash.exe
+D:\VisualStudio\CodeCool\SuperheroClash\bin\Debug\netcoreapp3.1\SuperheroClash.deps.json
+D:\VisualStudio\CodeCool\SuperheroClash\bin\Debug\netcoreapp3.1\SuperheroClash.runtimeconfig.json
+D:\VisualStudio\CodeCool\SuperheroClash\bin\Debug\netcoreapp3.1\SuperheroClash.runtimeconfig.dev.json
+D:\VisualStudio\CodeCool\SuperheroClash\bin\Debug\netcoreapp3.1\SuperheroClash.dll
+D:\VisualStudio\CodeCool\SuperheroClash\bin\Debug\netcoreapp3.1\SuperheroClash.pdb
+D:\VisualStudio\CodeCool\SuperheroClash\obj\Debug\netcoreapp3.1\SuperheroClash.csprojAssemblyReference.cache
+D:\VisualStudio\CodeCool\SuperheroClash\obj\Debug\netcoreapp3.1\SuperheroClash.AssemblyInfoInputs.cache
+D:\VisualStudio\CodeCool\SuperheroClash\obj\Debug\netcoreapp3.1\SuperheroClash.AssemblyInfo.cs
+D:\VisualStudio\CodeCool\SuperheroClash\obj\Debug\netcoreapp3.1\SuperheroClash.csproj.CoreCompileInputs.cache
+D:\VisualStudio\CodeCool\SuperheroClash\obj\Debug\netcoreapp3.1\SuperheroClash.dll
+D:\VisualStudio\CodeCool\SuperheroClash\obj\Debug\netcoreapp3.1\SuperheroClash.pdb
+D:\VisualStudio\CodeCool\SuperheroClash\obj\Debug\netcoreapp3.1\SuperheroClash.genruntimeconfig.cache
