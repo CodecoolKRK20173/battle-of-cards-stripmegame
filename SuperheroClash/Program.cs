@@ -10,6 +10,10 @@ namespace SuperheroClash
             var CardsOperation = new CardsDAO(@"D:\VisualStudio\CodeCool\SuperheroClash\SuperheroClash\Cards.csv");
             var HeroArray = CardsOperation.SplittingFile();
             var NewCards = CardsOperation.CreatingNewCards(HeroArray);
+            foreach (Card card in NewCards)
+                card.DisplayingCard();
+
         }
     }
 }
+    

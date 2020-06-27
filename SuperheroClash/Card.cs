@@ -15,6 +15,13 @@ namespace SuperheroClash
             this.Name = name;
             this.Team = team;
         }
+        
+        public void DisplayingCard()
+        {
+            Console.WriteLine("Rank: {0}", Rank);
+            Console.WriteLine("Name: {0}", Name);
+            Console.WriteLine("Team: {0}", Team);
+        }
 
     }
 }
