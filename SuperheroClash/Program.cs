@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 
 namespace SuperheroClash
 {
-    class Main
+    class Program
     {
         static void Main(string[] args)
         {

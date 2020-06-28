@@ -32,10 +32,14 @@ namespace SuperheroClash
             foreach(var hero in heroArray)
             {
                 var rank = Convert.ToInt32(hero[0]);
-                var name = hero[1];
-                var team = hero[2];
+                var power = Convert.ToInt32(hero[1]);
+                var intelligence = Convert.ToInt32(hero[2]);
+                var strength = Convert.ToInt32(hero[3]);
+                var name = hero[4];
+                var team = hero[5];
 
-                var newCard = new Card(rank, name, team);
+                var newCard = new Card(rank, power, intelligence, strength, name, team);
+                cards.Add(newCard);
                 cards.Add(newCard);
             }
 
