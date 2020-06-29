@@ -11,7 +11,7 @@ namespace SuperheroClash
             var HeroArray = CardsOperation.SplittingFile();
             var NewCards = CardsOperation.CreatingNewCards(HeroArray);
             Deck NewDeck = new Deck(NewCards);
-            var NewHand = NewDeck.ChooseRandomCards();
+            var NewHand = NewDeck.CreatingNewHand();
             foreach (var card in NewHand)
                 card.DisplayingCard();
         }

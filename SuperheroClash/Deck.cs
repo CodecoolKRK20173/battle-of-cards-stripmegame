@@ -17,7 +17,7 @@ namespace SuperheroClash
 			List<Card> newHand = new List<Card>();
 			Random random = new Random();
 			List<int> DrawnCards = new List<int>();
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 15; i++)
             {
 				var choosingCard = true;
 				while(choosingCard)
