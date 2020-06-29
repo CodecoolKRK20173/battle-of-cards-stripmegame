@@ -40,7 +40,6 @@ namespace SuperheroClash
 
                 var newCard = new Card(rank, power, intelligence, strength, name, team);
                 cards.Add(newCard);
-                cards.Add(newCard);
             }
 
             return cards;
