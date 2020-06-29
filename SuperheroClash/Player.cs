@@ -1,0 +1,6 @@
+﻿namespace SuperheroClash
+{
+    class Player
+    {
+    }
+}

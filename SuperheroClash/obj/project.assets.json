@@ -8,26 +8,28 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\domin\\.nuget\\packages\\": {}
+    "/Users/michalmijal/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VisualStudio\\CodeCool\\SuperheroClash\\SuperheroClash\\SuperheroClash.csproj",
+      "projectUniqueName": "/Users/michalmijal/Desktop/c#projects/battle-of-cards-stripmegame/SuperheroClash/SuperheroClash.csproj",
       "projectName": "SuperheroClash",
-      "projectPath": "D:\\VisualStudio\\CodeCool\\SuperheroClash\\SuperheroClash\\SuperheroClash.csproj",
-      "packagesPath": "C:\\Users\\domin\\.nuget\\packages\\",
-      "outputPath": "D:\\VisualStudio\\CodeCool\\SuperheroClash\\SuperheroClash\\obj\\",
+      "projectPath": "/Users/michalmijal/Desktop/c#projects/battle-of-cards-stripmegame/SuperheroClash/SuperheroClash.csproj",
+      "packagesPath": "/Users/michalmijal/.nuget/packages/",
+      "outputPath": "/Users/michalmijal/Desktop/c#projects/battle-of-cards-stripmegame/SuperheroClash/obj/",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\domin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/michalmijal/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -58,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.301/RuntimeIdentifierGraph.json"
       }
     }
   }

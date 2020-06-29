@@ -7,7 +7,7 @@ namespace SuperheroClash
     {
         static void Main(string[] args)
         {
-            var CardsOperation = new CardsDAO(@"D:\VisualStudio\CodeCool\SuperheroClash\SuperheroClash\Cards.csv");
+            var CardsOperation = new CardsDAO(@"/Users/michalmijal/Desktop/c#projects/battle-of-cards-stripmegame/SuperheroClash/Cards.csv");
             var HeroArray = CardsOperation.SplittingFile();
             var NewCards = CardsOperation.CreatingNewCards(HeroArray);
         }
