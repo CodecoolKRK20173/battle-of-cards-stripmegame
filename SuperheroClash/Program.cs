@@ -14,6 +14,7 @@ namespace SuperheroClash
             var NewHand = NewDeck.CreatingNewHand();
             foreach (var card in NewHand)
                 card.DisplayingCard();
+            View.MakeCard();
         }
     }
 }
