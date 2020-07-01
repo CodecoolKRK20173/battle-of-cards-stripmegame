@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Security.Principal;
 
 namespace SuperheroClash
@@ -31,6 +32,22 @@ namespace SuperheroClash
             Console.WriteLine("Strength: {0}", Strength);
             Console.WriteLine("Name: {0}", Name);
             Console.WriteLine("Team: {0}", Team);
+        }
+        public override string ToString()
+        {
+            string line = "|========================";
+
+            StringBuilder cardStr = new StringBuilder();
+            cardStr.AppendLine(line);
+            cardStr.AppendLine($"| Rank: {Rank}");
+            cardStr.AppendLine($"| Power: {Power}");
+            cardStr.AppendLine($"| Inteligence: {Inteligence}");
+            cardStr.AppendLine($"| Strength: {Strength}");
+            cardStr.AppendLine($"| Name: {Name}");
+            cardStr.AppendLine($"| Team: {Team}");
+            cardStr.AppendLine(line);
+
+            return cardStr.ToString();
         }
 
     }
