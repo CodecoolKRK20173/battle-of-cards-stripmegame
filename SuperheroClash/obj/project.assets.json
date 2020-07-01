@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VisualStudio\\CodeCool\\BattleOfCards\\BattleOfCards.csproj",
-      "projectName": "BattleOfCards",
-      "projectPath": "D:\\VisualStudio\\CodeCool\\BattleOfCards\\BattleOfCards.csproj",
+      "projectUniqueName": "D:\\VisualStudio\\CodeCool\\SuperheroClash\\SuperheroClash\\SuperheroClash.csproj",
+      "projectName": "SuperheroClash",
+      "projectPath": "D:\\VisualStudio\\CodeCool\\SuperheroClash\\SuperheroClash\\SuperheroClash.csproj",
       "packagesPath": "C:\\Users\\domin\\.nuget\\packages\\",
-      "outputPath": "D:\\VisualStudio\\CodeCool\\BattleOfCards\\obj\\",
+      "outputPath": "D:\\VisualStudio\\CodeCool\\SuperheroClash\\SuperheroClash\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\domin\\AppData\\Roaming\\NuGet\\NuGet.Config",
