@@ -7,7 +7,9 @@ namespace SuperheroClash
     class Hand
     {
         public List<Card> CardsInHand { get; set; }
-        private int _StartingHand = 15;
+        public bool IsEmpty { get; set; }
+        private int _NrOfCards { get; set; }
+        //private int _StartingHand = 15;
 
         public Hand()
         {
@@ -15,9 +17,9 @@ namespace SuperheroClash
         }
 
 
-        public void GetHand()
+        public void GetHand(Deck deck)
         {
-            CardsInHand = Deck.CreatingNewHand();
+            CardsInHand = deck.CreatingNewHand();
         }
 
         //public void GetHand(Deck deck)
@@ -41,8 +43,16 @@ namespace SuperheroClash
 
         public int GetNrOfCardsInHand()
         {
-            int _NrOfCards = CardsInHand.Count();
+            _NrOfCards = CardsInHand.Count();
             return _NrOfCards;
+        }
+
+        public void SetIsEmpty()
+        {
+            if (_NrOfCards == 0)
+            {
+                IsEmpty = true;
+            }
         }
     }
 }
