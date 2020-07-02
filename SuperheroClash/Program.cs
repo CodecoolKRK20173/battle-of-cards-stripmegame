@@ -8,17 +8,6 @@ namespace SuperheroClash
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
-            var CardsOperation = new CardsDAO(@"/Users/michalmijal/Desktop/c#projects/battle-of-cards-stripmegame/SuperheroClash/Cards.csv");
-            var HeroArray = CardsOperation.SplittingFile();
-            var NewCards = CardsOperation.CreatingNewCards(HeroArray);
-            Console.WriteLine(NewCards[0]);
-            //Deck NewDeck = new Deck(NewCards);
-            //var NewHand = NewDeck.CreatingNewHand();
-            //foreach (var card in NewHand)
-            //    card.DisplayingCard();
-            //View.MakeCard();
-=======
             var Menu = new Options();
             Menu.MainMenuOptions();
             
@@ -51,7 +40,6 @@ namespace SuperheroClash
                     IsPlaying = false;
 
             }
->>>>>>> DominikBranch
         }
     }
 }

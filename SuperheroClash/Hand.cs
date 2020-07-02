@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SuperheroClash
 {
-    class Hand
+    public class Hand
     {
         public List<Card> CardsInHand { get; set; }
         public bool IsEmpty { get; set; }
