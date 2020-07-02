@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SuperheroClash
 {
-    class Player
+    public class Player
     {
         public string Name { get; set; }
         public Hand Hand { get; set; }
