@@ -10,10 +10,10 @@ namespace SuperheroClash
         {
             var Menu = new Options();
             Menu.MainMenuOptions();
-            
-            bool IsPlaying = true; 
 
-            while(IsPlaying)
+            bool IsPlaying = true;
+
+            while (IsPlaying)
             {
                 Console.WriteLine("Choose an option by enter a number");
                 var Choice = Convert.ToInt16(Console.ReadLine());
@@ -29,7 +29,7 @@ namespace SuperheroClash
                     Console.WriteLine("Playing with computer");
                     IsPlaying = false;
                 }
-                    
+
                 else if (Choice == 3)
                 {
                     Console.WriteLine("Reading rules");
@@ -38,7 +38,6 @@ namespace SuperheroClash
 
                 else if (Choice == 4)
                     IsPlaying = false;
-
             }
         }
     }
