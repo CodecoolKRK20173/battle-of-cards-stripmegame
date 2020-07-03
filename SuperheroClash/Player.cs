@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace SuperheroClash
 {
@@ -30,7 +31,7 @@ namespace SuperheroClash
             IsActive = isActive;
         }
 
-        public int PickStat(int inputStat)
+        /*public int PickStat(int inputStat)
         { 
             while (! _statsToCompare.Contains(inputStat))
             {
@@ -49,9 +50,45 @@ namespace SuperheroClash
             }
             SetStatToCompare(inputStat);
             return inputStat;
+        }*/
+
+        public int GetStat(Card card)
+        {
+            var digits = new List<int>() { 1, 2, 3 };
+            int choice = 0;
+            var isChosing = true;
+            while (isChosing)
+            {
+                Console.WriteLine("\nEnter a valid number to choose a statistic to fight");
+                Console.WriteLine("{0}) {1} - {2}", 1, card.Power, "Power");
+                Console.WriteLine("{0}) {1} - {2}", 2, card.Inteligence, "Inteligence");
+                Console.WriteLine("{0}) {1} - {2}", 3, card.Strength, "Strength");
+                try
+                {
+                    choice = int.Parse(Console.ReadKey().KeyChar.ToString());
+                }
+                catch (System.FormatException)
+                {
+                    Console.WriteLine("\nInvalid value! Try again.");
+                    Thread.Sleep(3000);
+                    Console.Clear();
+                    continue;
+                }
+
+                if (!digits.Contains(choice))
+                {
+                    Console.WriteLine("\nInvalid number! Try again.");
+                    Thread.Sleep(3000);
+                    Console.Clear();
+                    continue;
+                }
+                SetStatToCompare(choice);
+                isChosing = false;
+            }
+            return choice;
         }
 
-        private void SetStatToCompare(int stat)
+        public void SetStatToCompare(int stat)
         {
             switch (stat)
             {

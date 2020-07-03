@@ -7,13 +7,13 @@ namespace SuperheroClash
 {
 	public class Options
 	{
-		private List<string> MainMenu = new List<string>() { "Play with friend", "Play with computer", "Game rules", "Quit" };
+		private static List<string> MainMenu = new List<string>() { "Play with friend", "Play with computer", "Game rules", "Quit" };
 		public Options()
 		{
 
 		}
 
-		public void MainMenuOptions()
+		public static void MainMenuOptions()
         {
             for (int i = 0; i < MainMenu.Count; i++)
             {
@@ -21,16 +21,17 @@ namespace SuperheroClash
             }
         }
 
-		public int PickStat(Card card)
+		/*public int PickStat(Card card)
         {   
             var digits = new List<int>() { 1, 2, 3 };
-            int choice;
-            while (true)
+            int choice = 0;
+            var isChoosing = true;
+            while (isChoosing)
             {
                 Console.WriteLine("Enter a valid number to choose a statistic to fight");
-                Console.WriteLine("{0}) {1}", 1, card.Power);
-                Console.WriteLine("{0}) {1}", 2, card.Inteligence);
-                Console.WriteLine("{0}) {1}", 3, card.Strength);
+                Console.WriteLine("{0}) {1} - {2}", 1, card.Power, "Power");
+                Console.WriteLine("{0}) {1} - {2}", 2, card.Inteligence, "Inteligence");
+                Console.WriteLine("{0}) {1} - {2}", 3, card.Strength, "Strength");
                 try
                 {
                     choice = int.Parse(Console.ReadKey().KeyChar.ToString());
@@ -50,11 +51,10 @@ namespace SuperheroClash
                     Console.Clear();
                     continue;
                 }
-                return choice;
-                
-
+                isChoosing = false;
             }
-        }
+            return choice;
+        }*/
 	}
 }
 

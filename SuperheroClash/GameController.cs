@@ -11,16 +11,20 @@ namespace SuperheroClash
         public Player Player1;
         public Player Player2;
         private IComparer<Card> Comparer { get; set; }
+        public Player ActualPlayer;
 
         public GameController()
         {
             Deck = GetDeck();
             var DrawHand = new Hand();
-            this.Player1 = new Player("Player1", true);
+            string name1 = GetName();
+            this.Player1 = new Player(name1, true);
             Player1.Hand.CardsInHand = Deck.CreatingNewHand();
-            this.Player2 = new Player("Player2", false);
+            string name2 = GetName();
+            this.Player2 = new Player(name2, false);
             Player2.Hand.CardsInHand = Deck.CreatingNewHand();
             var Comparer = new CardComparer();
+            this.ActualPlayer = Player1;
         }
 
         public bool GameOn()
@@ -37,8 +41,9 @@ namespace SuperheroClash
         {
             while (GameOn())
             {
+                Console.WriteLine("{0} turn", ActualPlayer.Name);
                 OneRound(Player1, Player2);
-
+                ChangePlayer();
             }
         }
 
@@ -49,7 +54,10 @@ namespace SuperheroClash
             if (player1.IsActive)
             {
                 //Print Card
-                PickStat(player1, player2);
+                int stat = PickStat(ActualPlayer);
+                if (ActualPlayer == player1)
+                    player2.SetStatToCompare(stat);
+                player1.SetStatToCompare(stat);
                 int comparisonResult = Comparer.Compare(player1.Hand.CardsInHand[0], player2.Hand.CardsInHand[0]);
                 GetRoundWinner(comparisonResult, player1, player2);
                 if (comparisonResult == 0)
@@ -69,6 +77,7 @@ namespace SuperheroClash
             {
                 playerWon.Hand.AddCard(card);
             }
+            DrawHand.Clear();
         }
 
         private void GetRoundWinner(int comparisonResult, Player Player1, Player Player2)
@@ -94,11 +103,10 @@ namespace SuperheroClash
         }
 
 
-        private void PickStat(Player player1, Player player2)
+        private int PickStat(Player player)
         {
-            int inputStat = 3; //int.Parse(Console.ReadLine());
-            player1.PickStat(inputStat);
-            player2.PickStat(inputStat);
+            int stat = player.GetStat(player.Hand.CardsInHand[0]);
+            return stat;
         }
 
         
@@ -109,13 +117,27 @@ namespace SuperheroClash
 
         private Deck GetDeck()
         {
-            var CardsDao = new CardsDAO(@"/Users/michalmijal/Desktop/c#projects/battle-of-cards-stripmegame/SuperheroClash/Cards.csv");
+            var CardsDao = new CardsDAO(@"D:\VisualStudio\CodeCool\SuperheroClash\SuperheroClash\Cards.csv");
             var Array = CardsDao.SplittingFile();
             var NewCards = CardsDao.CreatingNewCards(Array);
             var Deck = new Deck(NewCards);
             return Deck;
         }
 
+        private string GetName()
+        {
+            Console.WriteLine("Enter your name\n");
+            var name = Console.ReadLine();
+            return name;
+
+        }
+
+        private void ChangePlayer()
+        {
+            if (ActualPlayer == Player1)
+                ActualPlayer = Player2;
+            ActualPlayer = Player2;
+        }
 
     }
 }
