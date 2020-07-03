@@ -8,14 +8,20 @@ namespace SuperheroClash
     {
         static void Main(string[] args)
         {
-            //var CardsDao = new CardsDAO(@"/Users/michalmijal/Desktop/c#projects/battle-of-cards-stripmegame/SuperheroClash/Cards.csv");
-            //var Array = CardsDao.SplittingFile();
-            //var NewCards = CardsDao.CreatingNewCards(Array);
-            //var Hand = NewCards.CreatingNewHand();
+
+            var CardsDao = new CardsDAO(@"D:\VisualStudio\CodeCool\SuperheroClash\SuperheroClash\Cards.csv");
+            var Array = CardsDao.SplittingFile();
+            var NewCards = CardsDao.CreatingNewCards(Array);
+            var Deck = new Deck(NewCards);
+            var Hand = Deck.CreatingNewHand();
+            var Options = new Options();
+            var Choice = Options.PickStat(Hand[6]);
+            Console.WriteLine("Your choice is {0}", Choice);
             //Console.WriteLine(NewCards);
 
             GameController gameController = new GameController();
             gameController.Game();
+            /*GameController gameController = new GameController();*/
 
             //gameController.PickStat(gameController.Player1, gameController.Player2);
 

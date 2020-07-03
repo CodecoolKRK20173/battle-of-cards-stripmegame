@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Xml.Serialization;
 
 namespace SuperheroClash
 {
@@ -16,6 +18,41 @@ namespace SuperheroClash
             for (int i = 0; i < MainMenu.Count; i++)
             {
                 Console.WriteLine("{0}) {1}", i+1, MainMenu[i]);
+            }
+        }
+
+		public int PickStat(Card card)
+        {   
+            var digits = new List<int>() { 1, 2, 3 };
+            int choice;
+            while (true)
+            {
+                Console.WriteLine("Enter a valid number to choose a statistic to fight");
+                Console.WriteLine("{0}) {1}", 1, card.Power);
+                Console.WriteLine("{0}) {1}", 2, card.Inteligence);
+                Console.WriteLine("{0}) {1}", 3, card.Strength);
+                try
+                {
+                    choice = int.Parse(Console.ReadKey().KeyChar.ToString());
+                }
+                catch (System.FormatException)
+                {
+                    Console.WriteLine("\nInvalid value! Try again.");
+                    Thread.Sleep(3000);
+                    Console.Clear();
+                    continue;
+                }
+
+                if (!digits.Contains(choice))
+                {
+                    Console.WriteLine("\nInvalid number! Try again.");
+                    Thread.Sleep(3000);
+                    Console.Clear();
+                    continue;
+                }
+                return choice;
+                
+
             }
         }
 	}
