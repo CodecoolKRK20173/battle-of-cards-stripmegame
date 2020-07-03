@@ -11,15 +11,13 @@ namespace SuperheroClash
         public bool HasLost { get; set; }
         public enum Stats
         {
-            Rank = 1,
-            Power = 2,
-            Inteligence = 3,
-            Strength = 4
+            Power = 1,
+            Inteligence = 2,
+            Strength = 3
         }
 
         private List<int> _statsToCompare = new List<int>()
         {
-            (int)Stats.Rank,
             (int)Stats.Power,
             (int)Stats.Inteligence,
             (int)Stats.Strength
@@ -42,11 +40,11 @@ namespace SuperheroClash
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("Enter 1, 2, 3 or 4.");
+                    Console.WriteLine("Enter 1, 2, or 3.");
                 }
                 catch (ArgumentException)
                 {
-                    Console.WriteLine("Enter 1, 2, 3 or 4.");
+                    Console.WriteLine("Enter 1, 2 or 3.");
                 }
             }
             SetStatToCompare(inputStat);
@@ -58,15 +56,12 @@ namespace SuperheroClash
             switch (stat)
             {
                 case 1:
-                    Hand.CardsInHand[0].StatToCompare = Hand.CardsInHand[0].Rank;
-                    break;
-                case 2:
                     Hand.CardsInHand[0].StatToCompare = Hand.CardsInHand[0].Power;
                     break;
-                case 3:
+                case 2:
                     Hand.CardsInHand[0].StatToCompare = Hand.CardsInHand[0].Inteligence;
                     break;
-                case 4:
+                case 3:
                     Hand.CardsInHand[0].StatToCompare = Hand.CardsInHand[0].Strength;
                     break;
             }
