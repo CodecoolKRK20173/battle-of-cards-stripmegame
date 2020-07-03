@@ -16,9 +16,9 @@ namespace SuperheroClash
         public List<string[]> SplittingFile()
         {
             List<string[]> heroArray = new List<string[]>();
-            //var newFile = File.ReadAllText(FilePath);
-            //var cards = newFile.Split(";\r\n");
-            var cards = File.ReadLines(FilePath);
+            var newFile = File.ReadAllText(FilePath);
+            var cards = newFile.Split(";\r\n");
+            /*var cards = File.ReadLines(FilePath);*/
             foreach (var line in cards)
             {
                 var hero = line.Split(", ");
@@ -49,7 +49,7 @@ namespace SuperheroClash
 
         public Deck GetDeck()
         {
-            var CardsDao = new CardsDAO(@"/Users/michalmijal/Desktop/c#projects/battle-of-cards-stripmegame/SuperheroClash/Cards.csv");
+            var CardsDao = new CardsDAO(@"D:\VisualStudio\CodeCool\SuperheroClash\SuperheroClash\Cards.csv");
             var Array = CardsDao.SplittingFile();
             var NewCards = CardsDao.CreatingNewCards(Array);
             var Deck = new Deck(NewCards);
