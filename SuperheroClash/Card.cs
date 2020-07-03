@@ -10,8 +10,8 @@ namespace SuperheroClash
         public int Power;
         public int Inteligence;
         public int Strength;
-        private string Name;
-        private string Team;
+        public string Name;
+        public string Team;
         private int State;
         public int StatToCompare { get; set;}
 
@@ -26,7 +26,7 @@ namespace SuperheroClash
             StatToCompare = 0;
         }
         
-        public void DisplayingCard()
+        /*public void DisplayingCard()
         {
             Console.WriteLine("Rank: {0}", Rank);
             Console.WriteLine("Power: {0}", Power);
@@ -34,23 +34,8 @@ namespace SuperheroClash
             Console.WriteLine("Strength: {0}", Strength);
             Console.WriteLine("Name: {0}", Name);
             Console.WriteLine("Team: {0}", Team);
-        }
-        public override string ToString()
-        {
-            string line = "|========================";
-
-            StringBuilder cardStr = new StringBuilder();
-            cardStr.AppendLine(line);
-            cardStr.AppendLine($"| Rank: {Rank}");
-            cardStr.AppendLine($"| Power: {Power}");
-            cardStr.AppendLine($"| Inteligence: {Inteligence}");
-            cardStr.AppendLine($"| Strength: {Strength}");
-            cardStr.AppendLine($"| Name: {Name}");
-            cardStr.AppendLine($"| Team: {Team}");
-            cardStr.AppendLine(line);
-
-            return cardStr.ToString();
-        }
+        }*/
+        
 
     }
 }
