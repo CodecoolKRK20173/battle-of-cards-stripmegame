@@ -32,9 +32,8 @@ namespace SuperheroClash
             IsActive = isActive;
         }
 
-        public int PickStat()
+        public int PickStat(int inputStat)
         { 
-            int inputStat = int.Parse(Console.ReadLine());
             while (! _statsToCompare.Contains(inputStat))
             {
                 try
@@ -50,7 +49,27 @@ namespace SuperheroClash
                     Console.WriteLine("Enter 1, 2, 3 or 4.");
                 }
             }
+            SetStatToCompare(inputStat);
             return inputStat;
+        }
+
+        private void SetStatToCompare(int stat)
+        {
+            switch (stat)
+            {
+                case 1:
+                    Hand.CardsInHand[0].StatToCompare = Hand.CardsInHand[0].Rank;
+                    break;
+                case 2:
+                    Hand.CardsInHand[0].StatToCompare = Hand.CardsInHand[0].Power;
+                    break;
+                case 3:
+                    Hand.CardsInHand[0].StatToCompare = Hand.CardsInHand[0].Inteligence;
+                    break;
+                case 4:
+                    Hand.CardsInHand[0].StatToCompare = Hand.CardsInHand[0].Strength;
+                    break;
+            }
         }
 
 

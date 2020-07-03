@@ -6,7 +6,7 @@ namespace SuperheroClash
 {
 	public class Deck
 	{
-		private List<Card> Cards;
+		public List<Card> Cards;
 		public Deck(List<Card> cards)
 		{
 			this.Cards = cards;
@@ -32,6 +32,7 @@ namespace SuperheroClash
             }
 			return newHand;
         }
-    }
+
+	}
 }
 
