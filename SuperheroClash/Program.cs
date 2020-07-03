@@ -15,6 +15,7 @@ namespace SuperheroClash
             //Console.WriteLine(NewCards);
 
             GameController gameController = new GameController();
+            gameController.Game();
 
             //gameController.PickStat(gameController.Player1, gameController.Player2);
 
