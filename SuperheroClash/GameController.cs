@@ -1,51 +1,52 @@
+using System.Collections.Generic;
+using System;
+
 namespace SuperheroClash
 {
     public class GameController
     {
-        Player Player1;
-        Player Player2;
+        public Hand Hand { get; set; }
+        public Deck Deck { get; set; }
+        public Player Player1 { get; set; }
+        public Player Player2 { get; set; }
+        private IComparer<Card> Comparer { get; set; }
 
-        CardsDAO myCards;
-
-        Deck myDeck;
-        CardComparer myComparer;
-
-
-        public GameController( string filePath )
+        public GameController()
         {
-            myCards = new CardsDAO( filePath );
-            myDeck  = new Deck( myCards.CreatingNewCards(myCards.SplittingFile() ) );
-            Player1.Hand.CardsInHand = myDeck.CreatingNewHand();
-            Player2.Hand.CardsInHand = myDeck.CreatingNewHand();
-            Player1.HasLost = false;
-            Player2.HasLost = false;
-
-            Player1.IsActive = true; // maybe a new method to handle this?
+            Deck = GetDeck();
+            var Player1 = new Player("Player1", true);
+            Player1.Hand.CardsInHand = Deck.CreatingNewHand();
+            var Player2 = new Player("Player2", false);
+            Player2.Hand.CardsInHand = Deck.CreatingNewHand();
+            var Comparer = new CardComparer();
+            PickStat(Player1, Player2);
         }
 
-        public void GamePlay()
+        public void PickStat(Player player1, Player player2)
         {
-            while ( !Player1.HasLost && !Player2.HasLost )
-            {
-                // get players card with stats to compare
-                myComparer.Compare( ref Player1, ref Player2 );
-                    // compare cards
-                    // add card to player hand with greater stats... remove other player hand
-                        // if equal... get more cards from players
-                // check number of cards in players' hand
-                if ( Player1.Hand.CardsInHand.Count == 30 )
-                {
-                    Player2.HasLost = true;
-                }
-                else if ( Player2.Hand.CardsInHand.Count == 30 )
-                {
-                    Player1.HasLost = true;
-                }
-                // assign winner and loser to correct players
-            }
+            int inputStat = 3; //int.Parse(Console.ReadLine());
+            player1.PickStat(inputStat);
+            player2.PickStat(inputStat);
+        }
 
+        private void SwitchActiveplayer(Player player1, Player player2)
+        {
+            player1.IsActive = false;
+            player2.IsActive = true;
+        }
 
-            
+        private int CompareCards()
+        {
+            return Comparer.Compare(Player1.Hand.CardsInHand[0], Player2.Hand.CardsInHand[0]);
+        }
+
+        public Deck GetDeck()
+        {
+            var CardsDao = new CardsDAO(@"/Users/michalmijal/Desktop/c#projects/battle-of-cards-stripmegame/SuperheroClash/Cards.csv");
+            var Array = CardsDao.SplittingFile();
+            var NewCards = CardsDao.CreatingNewCards(Array);
+            var Deck = new Deck(NewCards);
+            return Deck;
         }
     }
 }

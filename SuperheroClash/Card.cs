@@ -6,13 +6,14 @@ namespace SuperheroClash
 {
     public class Card
     {
-        private int Rank;
-        private int Power;
-        private int Inteligence;
-        private int Strength;
+        public int Rank;
+        public int Power;
+        public int Inteligence;
+        public int Strength;
         private string Name;
         private string Team;
         private int State;
+        public int StatToCompare { get; set;}
 
         public Card(int rank, int power, int inteligence, int strength, string name, string team)
         {
@@ -22,6 +23,7 @@ namespace SuperheroClash
             this.Strength = strength;
             this.Name = name;
             this.Team = team;
+            StatToCompare = 0;
         }
         
         public void DisplayingCard()
