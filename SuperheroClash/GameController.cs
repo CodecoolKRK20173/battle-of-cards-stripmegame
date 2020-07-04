@@ -5,25 +5,24 @@ namespace SuperheroClash
 {
     public class GameController
     {
-        public Hand Hand { get; set; }
         public List<Card> DrawHand = new List<Card>();
         public Deck Deck { get; set; }
         public Player Player1;
         public Player Player2;
         private IComparer<Card> Comparer { get; set; }
         public Player ActualPlayer;
+        private const int _TOPCARD = 0;
 
         public GameController()
         {
-            Deck = GetDeck();
-            var DrawHand = new Hand();
+            this.Deck = GetDeck();
+            this.Comparer = new CardComparer();
             string name1 = GetName();
             this.Player1 = new Player(name1, true);
             Player1.Hand.CardsInHand = Deck.CreatingNewHand();
             string name2 = GetName();
             this.Player2 = new Player(name2, false);
             Player2.Hand.CardsInHand = Deck.CreatingNewHand();
-            var Comparer = new CardComparer();
             this.ActualPlayer = Player1;
         }
 
@@ -50,29 +49,26 @@ namespace SuperheroClash
 
         public void OneRound(Player player1, Player player2)
         {
-            var Comparer = new CardComparer();
-            if (player1.IsActive)
-            {
-                //Print Card
-                int stat = PickStat(ActualPlayer);
-                if (ActualPlayer == player1)
-                    player2.SetStatToCompare(stat);
-                player1.SetStatToCompare(stat);
-                int comparisonResult = Comparer.Compare(player1.Hand.CardsInHand[0], player2.Hand.CardsInHand[0]);
-                GetRoundWinner(comparisonResult, player1, player2);
-                if (comparisonResult == 0)
-                {
-                    OneRound(player1, player2);
-                }
-            }
+            Console.WriteLine("{0}'s card\n", player1.Name);
+            Console.WriteLine(player1.Hand.CardsInHand[_TOPCARD]);
+            Console.WriteLine("{0}'s card\n", player2.Name);
+            Console.WriteLine(player2.Hand.CardsInHand[_TOPCARD]);
+            int stat = PickStat(ActualPlayer);
+            if (ActualPlayer == player1)
+                player2.SetStatToCompare(stat);
+            player1.SetStatToCompare(stat);
+            int comparisonResult = Comparer.Compare(player1.Hand.CardsInHand[_TOPCARD], player2.Hand.CardsInHand[_TOPCARD]);
+            GetRoundWinner(comparisonResult, player1, player2);
+            if (comparisonResult == 0)
+                OneRound(player1, player2);
         }
 
         private void MoveCards(Player playerWon, Player playerLost)
         {
-            playerWon.Hand.AddCard(playerWon.Hand.CardsInHand[0]);
-            playerWon.Hand.RemoveCard(playerWon.Hand.CardsInHand[0]);
-            playerWon.Hand.AddCard(playerLost.Hand.CardsInHand[0]);
-            playerLost.Hand.RemoveCard(playerLost.Hand.CardsInHand[0]);
+            playerWon.Hand.AddCard(playerWon.Hand.CardsInHand[_TOPCARD]);
+            playerWon.Hand.RemoveCard(playerWon.Hand.CardsInHand[_TOPCARD]);
+            playerWon.Hand.AddCard(playerLost.Hand.CardsInHand[_TOPCARD]);
+            playerLost.Hand.RemoveCard(playerLost.Hand.CardsInHand[_TOPCARD]);
             foreach (var card in DrawHand)
             {
                 playerWon.Hand.AddCard(card);
@@ -95,25 +91,25 @@ namespace SuperheroClash
             if (comparisonResult == 0)
             {
                 Console.WriteLine("It is a draw");
-                DrawHand.Add(Player1.Hand.CardsInHand[0]);
-                Player1.Hand.RemoveCard(Player1.Hand.CardsInHand[0]);
-                DrawHand.Add(Player2.Hand.CardsInHand[0]);
-                Player2.Hand.RemoveCard(Player2.Hand.CardsInHand[0]);
+                MoveCardsToDrawHand(Player1, Player2);
             }
+        }
+
+        private void MoveCardsToDrawHand(Player player1, Player player2)
+        {
+            DrawHand.Add(player1.Hand.CardsInHand[_TOPCARD]);
+            player1.Hand.RemoveCard(player1.Hand.CardsInHand[_TOPCARD]);
+            DrawHand.Add(player2.Hand.CardsInHand[_TOPCARD]);
+            player2.Hand.RemoveCard(player2.Hand.CardsInHand[_TOPCARD]);
         }
 
 
         private int PickStat(Player player)
         {
-            int stat = player.GetStat(player.Hand.CardsInHand[0]);
+            int stat = player.GetStat(player.Hand.CardsInHand[_TOPCARD]);
             return stat;
         }
 
-        
-        private int CompareCards()
-        {
-            return Comparer.Compare(Player1.Hand.CardsInHand[0], Player2.Hand.CardsInHand[0]);
-        }
 
         private Deck GetDeck()
         {
