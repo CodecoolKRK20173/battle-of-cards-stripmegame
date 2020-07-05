@@ -10,6 +10,7 @@ namespace SuperheroClash
         {
 
             var IsPlaying = true;
+            View myView = new View();
 
             while (IsPlaying)
             {
@@ -32,6 +33,7 @@ namespace SuperheroClash
                 else if (Choice == 3)
                 {
                     Console.WriteLine("Reading rules");
+                    myView.GameRules();
                     IsPlaying = false;
                 }
 
