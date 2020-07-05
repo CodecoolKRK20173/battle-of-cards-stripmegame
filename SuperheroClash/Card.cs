@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using System.Security.Principal;
 
 namespace SuperheroClash
 {
@@ -12,7 +11,6 @@ namespace SuperheroClash
         public int Strength;
         public string Name;
         public string Team;
-        private int State;
         public int StatToCompare { get; set;}
 
         public Card(int rank, int power, int inteligence, int strength, string name, string team)
@@ -25,6 +23,7 @@ namespace SuperheroClash
             this.Team = team;
             StatToCompare = 0;
         }
+
 
         public override string ToString()
         {
@@ -49,18 +48,6 @@ namespace SuperheroClash
 
             return cardStr.ToString();
         }
-
-        /*public void DisplayingCard()
-        {
-            Console.WriteLine("Rank: {0}", Rank);
-            Console.WriteLine("Power: {0}", Power);
-            Console.WriteLine("Inteligence: {0}", Inteligence);
-            Console.WriteLine("Strength: {0}", Strength);
-            Console.WriteLine("Name: {0}", Name);
-            Console.WriteLine("Team: {0}", Team);
-        }*/
-
-
     }
 }
 

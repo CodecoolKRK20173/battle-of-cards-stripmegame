@@ -1,6 +1,4 @@
 ﻿using System;
-
-using System;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -10,9 +8,9 @@ namespace SuperheroClash
 	{
         public List<Card> DrawHand = new List<Card>();
         public Deck Deck { get; set; }
+		protected IComparer<Card> Comparer { get; set; }
         public Player Player1;
         public Player Player2;
-        protected IComparer<Card> Comparer { get; set; }
         public Player ActualPlayer;
 		public Player Winner;
         protected const int _TOPCARD = 0;

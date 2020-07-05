@@ -12,6 +12,7 @@ namespace SuperheroClash
             Player2.Name = GetName();
         }
 
+
         protected override int PickStat(Player player)
         {
             int stat = player.GetStat(player.Hand.CardsInHand[_TOPCARD]);
