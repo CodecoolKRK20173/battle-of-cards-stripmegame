@@ -13,12 +13,12 @@ namespace SuperheroClash
             this.FilePath = filePath;
         }
 
+
         public List<string[]> SplittingFile()
         {
             List<string[]> heroArray = new List<string[]>();
             var newFile = File.ReadAllText(FilePath);
             var cards = newFile.Split(";\r\n");
-            /*var cards = File.ReadLines(FilePath);*/
             foreach (var line in cards)
             {
                 var hero = line.Split(", ");

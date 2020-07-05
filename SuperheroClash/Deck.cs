@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 namespace SuperheroClash
 {
 	public class Deck
 	{
 		public List<Card> Cards;
+
 		public Deck(List<Card> cards)
 		{
 			this.Cards = cards;
 		}
+
 
 		public List<Card> CreatingNewHand()
         {

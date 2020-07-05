@@ -1,6 +1,4 @@
-﻿using System;
-using System.Dynamic;
-
+﻿
 namespace SuperheroClash
 {
 	public class GameControllerAI: GameController

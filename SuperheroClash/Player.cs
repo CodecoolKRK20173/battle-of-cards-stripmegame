@@ -9,7 +9,7 @@ namespace SuperheroClash
         public string Name { get; set; }
         public Hand Hand { get; set; }
         public bool HasLost { get; set; }
-        public enum Stats
+        private enum Stats
         {
             Power = 1,
             Inteligence = 2,
@@ -26,6 +26,7 @@ namespace SuperheroClash
         {
             Hand = new Hand();
         }
+
 
         public abstract int GetStat(Card card);
 
@@ -44,17 +45,5 @@ namespace SuperheroClash
                     break;
             }
         }
-
-
-        public void SetHasLost()
-        {
-            if(Hand.IsEmpty == true)
-            {
-                HasLost = true;
-            }
-        }
-
-
-
     }
 }

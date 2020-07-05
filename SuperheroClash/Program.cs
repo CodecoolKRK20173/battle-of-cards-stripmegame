@@ -14,6 +14,7 @@ namespace SuperheroClash
 
             while (IsPlaying)
             {
+                var Options = new Options();
                 Options.MainMenuOptions();
                 Console.WriteLine("\nChoose an option by enter a number");
                 var Choice = Convert.ToInt16(Console.ReadLine());
