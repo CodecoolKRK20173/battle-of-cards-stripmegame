@@ -9,18 +9,6 @@ namespace SuperheroClash
         static void Main(string[] args)
         {
 
-            /*var CardsDao = new CardsDAO(@"D:\VisualStudio\CodeCool\SuperheroClash\SuperheroClash\Cards.csv");
-            var Array = CardsDao.SplittingFile();
-            var NewCards = CardsDao.CreatingNewCards(Array);
-            var Deck = new Deck(NewCards);
-            var Hand = Deck.CreatingNewHand();
-            var View = new View(Hand[0], Hand[1]);
-            View.DisplayingActualCards();*/
-            /*var Options = new Options();
-            var Choice = Options.PickStat(Hand[6]);
-            Console.WriteLine("Your choice is {0}", Choice);*/
-            //Console.WriteLine(NewCards);
-
             var IsPlaying = true;
 
             while (IsPlaying)
@@ -31,14 +19,14 @@ namespace SuperheroClash
 
                 if (Choice == 1)
                 {
-                    GameController gameController = new GameController();
+                    GameControllerPlayer gameController = new GameControllerPlayer();
                     gameController.Game();
                 }
 
                 else if (Choice == 2)
                 {
-                    Console.WriteLine("Playing with computer");
-                    IsPlaying = false;
+                    GameControllerAI gameController = new GameControllerAI();
+                    gameController.Game();
                 }
 
                 else if (Choice == 3)

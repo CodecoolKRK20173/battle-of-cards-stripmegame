@@ -8,42 +8,25 @@ namespace SuperheroClash
 {
 	public class View 
 	{
-        private Card _card1;
-        private Card _card2;
+        public const int _TOPCARD = 0;
 
-		public View(Card card1, Card card2)
+		public View()
 		{
-            this._card1 = card1;
-            this._card2 = card2;
 		}
 
-
-
-        public void DisplayingActualCards()
-        { 
-            string outsideLine = "##=======================##";
-            string insideLine = "||-----------------------||";
-            string emptyLine = "||                       ||";
-
-            StringBuilder cardStr = new StringBuilder();
-            cardStr.AppendLine(outsideLine);
-            cardStr.AppendLine($"|| Name: {_card1.Name}");
-            cardStr.AppendLine($"|| Team: {_card1.Team}");
-            cardStr.AppendLine($"|| Rank: {_card1.Rank}");
-            cardStr.AppendLine(emptyLine);
-            cardStr.AppendLine(emptyLine);
-            cardStr.AppendLine(insideLine);
-            cardStr.AppendLine($"|| Power: {_card1.Power}              ||");
-            cardStr.AppendLine(insideLine);
-            cardStr.AppendLine($"|| Inteligence: {_card1.Inteligence}        ||");
-            cardStr.AppendLine(insideLine);
-            cardStr.AppendLine($"|| Strength: {_card1.Strength}           ||");
-            cardStr.AppendLine(outsideLine);
-
-            Console.WriteLine(cardStr.ToString());
+        public void DispalyingTable(Player actualPlayer, Player player1, Player player2)
+        {
+            Console.Clear();
+            Console.WriteLine("{0} turn\n", actualPlayer.Name);
+            Console.WriteLine("Number of cards in {0}'s hand: {1}", player1.Name, player1.Hand.CardsInHand.Count);
+            Console.WriteLine("{0}'s card\n", player1.Name);
+            Console.WriteLine(player1.Hand.CardsInHand[_TOPCARD]);
+            Console.WriteLine("Number of cards in {0}'s hand: {1}", player2.Name, player2.Hand.CardsInHand.Count);
+            Console.WriteLine("{0}'s card\n", player2.Name);
+            Console.WriteLine(player2.Hand.CardsInHand[_TOPCARD]);
         }
-    
-	}
+
+    }
 }
 
 
